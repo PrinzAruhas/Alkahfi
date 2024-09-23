@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="logo.webp">
+    <title>Portfolio Alfi</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Alfi</a>
+
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#skills-section">Skills</a>
+            <a href="#game-section">My Game</a> <!-- Scroll ke bagian game-->
+            <a href="#contact-section" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="img (1).png" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Alfi</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>a profession carried out by people whose job is to design a website.</p>
+            <div class="social-icons">
+                <a href="#" id="github-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.tiktok.com/@arufi_20?is_from_webapp=1&sender_device=pc" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                <a href="#" id="instagram-link">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>                  
+            </div>
+            <a href="#" class="btn">Hire me</a>
+        </div>
+    </section>
+    <section id="skills-section" class="skills">
+        <div class="skills-container">
+            <div class="skills-image">
+                <img src="Enterprise Icon💝.jpeg" alt="Skills Image">
+            </div>
+            <div class="skills-text">
+                <h2>My Skills</h2>
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <p>my html skills are around 70%.</p>
+                </div>
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <p>my css skills are around 30%.</p>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <p>I'm still learning Java script.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Bagian Game dengan ID "game-section" -->
+    <section id="game-section">
+        <h2>My Game</h2>
+        
+        <div class="game-item">
+            <img src="Game 1.jpg" alt="Game 1">
+            <div class="description">
+                <h3>Wuthering Waves</h3>
+                <p>Wuthering Waves berlatarkan dunia pasca-apokaliptik futuristik setelah bencana yang disebut Lament memusnahkan sebagian besar umat manusia dan menyebabkan munculnya makhluk dan monster tak dikenal yang disebut Tacet Discords.</p>
+            </div>
+        </div>
+
+        <div class="game-item">
+            <img src="game 2.webp" alt="Game 2">
+            <div class="description">
+                <h3>Genshin Impact</h3>
+                <p>Genshin Impact adalah sebuah game Open World RPG. Di Genshin Impact, kamu akan menjelajahi dunia fantasi yang dikenal dengan nama Teyvat.</p>
+            </div>
+        </div>
+
+        <div class="game-item">
+            <img src="game 3.jpeg" alt="Game 3">
+            <div class="description">
+                <h3>Honkai Star Rail</h3>
+                <p>Honkai: Star Rail merupakan permainan keempat dalam seri Honkai yang menggunakan karakter dari Honkai Impact 3rd dan elemen alur permainan dari Genshin Impact.</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="images (1).jpeg" alt="Game 3">
+            <div class="description">
+                <h3>Azur Lane</h3>
+                <p>Azur Lane adalah sebuah permainan video tembak-menembak gulir samping yang dibuat oleh pengembang dari Tiongkok, Shanghai Manjuu dan Xiamen Yongshi. Permainan video ini dirilis pertama kali pada tahun 2017.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact-section" class="contact">
+        <div class="contact-container">
+            <div class="contact-image">
+                <img src="Contact Me.png" alt="Contact Image">
+            </div>
+            <div class="contact-text">
+                <h2>Contact Us</h2>
+                <p>Message me in whatsapp</p>
+                <p>Phone: 087848111835</p>
+            </div>
+        </div>
+    </section>
+    
+    </div>
+    <script>
+        document.querySelector('a[href="#game-section"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            const section = document.querySelector('#game-section');
+            const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
+            const offset = window.innerHeight / 2 - section.offsetHeight / 2;
+    
+            window.scrollTo({
+                top: sectionPosition - offset,
+                behavior: 'smooth'
+            });
+        });
+          // Tambahkan event listener ke tombol
+          document.getElementById('github-link').addEventListener('click', function(event) {
+            event.preventDefault();  // Menghentikan default behavior link
+            // Ganti 'YOUR_GITHUB_USERNAME' dengan username GitHub Anda
+            window.location.href = 'https://github.com/PrinzAruhas';
+        });
+        document.getElementById('instagram-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Mencegah tautan default
+
+    // Masukkan URL profil Instagram Anda di sini
+    var instagramProfileUrl = 'https://www.instagram.com/alkahfi_110/';
+
+    // Arahkan pengguna ke URL profil Instagram
+    window.location.href = instagramProfileUrl;
+});
+ // Dapatkan semua elemen skill
+ const skills = document.querySelectorAll('.skill h3');
+
+// Tambahkan event listener untuk setiap skill
+skills.forEach(skill => {
+    skill.addEventListener('click', function() {
+        // Hapus kelas 'active' dari semua skill
+        skills.forEach(s => s.parentElement.classList.remove('active'));
+
+        // Tambahkan kelas 'active' pada skill yang diklik
+        this.parentElement.classList.add('active');
+    });
+});
+document.querySelector('a[href="#contact-section"]').addEventListener('click', function(e) {
+        e.preventDefault(); // Mencegah perilaku default anchor
+        const target = document.querySelector('#contact-section');
+        const offset = 100; // Ubah ini sesuai dengan keinginan
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const targetRect = target.getBoundingClientRect().top;
+        const targetPosition = targetRect - bodyRect - offset;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    });
+ </script>
+</body>
+</html>
